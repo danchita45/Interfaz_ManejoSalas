@@ -32,7 +32,6 @@ public class Opciones extends javax.swing.JFrame {
         Exit = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         B_sala = new javax.swing.JButton();
-        A_sala = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,15 +74,7 @@ public class Opciones extends javax.swing.JFrame {
                 B_salaActionPerformed(evt);
             }
         });
-        getContentPane().add(B_sala, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 160, 100));
-
-        A_sala.setText("Agregar Sala");
-        A_sala.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A_salaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(A_sala, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 160, 100));
+        getContentPane().add(B_sala, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 160, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos_e_Imagenes/Imagenes interfaz/Fondo_libreta.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 370));
@@ -115,12 +106,6 @@ public class Opciones extends javax.swing.JFrame {
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_B_salaActionPerformed
-
-    private void A_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A_salaActionPerformed
-        N_sala a= new N_sala();
-        a.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_A_salaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +144,6 @@ public class Opciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton A_sala;
     private javax.swing.JButton Agregar;
     private javax.swing.JButton B_sala;
     private javax.swing.JButton Exit;
