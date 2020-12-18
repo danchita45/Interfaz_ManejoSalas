@@ -100,11 +100,21 @@ public class Altas_Usuarios extends javax.swing.JFrame {
                 N_tipoActionPerformed(evt);
             }
         });
+        N_tipo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N_tipoKeyTyped(evt);
+            }
+        });
         getContentPane().add(N_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, 30));
 
         Nuevo_nick.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nuevo_nickActionPerformed(evt);
+            }
+        });
+        Nuevo_nick.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Nuevo_nickKeyTyped(evt);
             }
         });
         getContentPane().add(Nuevo_nick, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 130, 30));
@@ -131,7 +141,18 @@ public class Altas_Usuarios extends javax.swing.JFrame {
                 ID_usuarioActionPerformed(evt);
             }
         });
+        ID_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ID_usuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(ID_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, 40));
+
+        pintxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pintxtKeyTyped(evt);
+            }
+        });
         getContentPane().add(pintxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 110, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos_e_Imagenes/Imagenes interfaz/Fondo_libreta.png"))); // NOI18N
@@ -152,6 +173,7 @@ public void Agregarusuario(){
         JOptionPane.showMessageDialog(null, "registro exisoto");
         PIN p= new PIN();
         p.setVisible(true);
+        this.dispose();
         
         
         
@@ -197,6 +219,38 @@ public void Agregarusuario(){
     private void ID_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ID_usuarioActionPerformed
+
+    private void N_tipoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N_tipoKeyTyped
+    char Validar = evt.getKeyChar();
+        if (Character.isLetter(Validar)) {
+            JOptionPane.showMessageDialog(rootPane, "Ingtrese solo numeros");
+            
+        }
+    }//GEN-LAST:event_N_tipoKeyTyped
+
+    private void ID_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ID_usuarioKeyTyped
+        char Validar = evt.getKeyChar();
+        if (Character.isLetter(Validar)) {
+            JOptionPane.showMessageDialog(rootPane, "Ingtrese solo numeros");
+            
+        }
+    }//GEN-LAST:event_ID_usuarioKeyTyped
+
+    private void Nuevo_nickKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nuevo_nickKeyTyped
+         char Validar = evt.getKeyChar();
+        if (Character.isDigit(Validar)) {
+            JOptionPane.showMessageDialog(rootPane, "Ingtrese solo Letras");
+            
+        }
+    }//GEN-LAST:event_Nuevo_nickKeyTyped
+
+    private void pintxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pintxtKeyTyped
+         char Validar = evt.getKeyChar();
+        if (Character.isLetter(Validar) ) {
+            JOptionPane.showMessageDialog(rootPane, "Ingtrese solo numeros");
+            
+        }
+    }//GEN-LAST:event_pintxtKeyTyped
 
     /**
      * @param args the command line arguments

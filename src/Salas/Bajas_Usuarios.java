@@ -6,6 +6,7 @@
 package Salas;
 
 import Programacion.conexionSQL;
+import com.mysql.jdbc.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -21,16 +22,25 @@ public class Bajas_Usuarios extends javax.swing.JFrame {
    conexionSQL cc = new conexionSQL();
     Connection con = cc.conexion();
     public void Eliminar(){
-        String usuario=B_nombre.getText();
-    String id= id_baja.getText();
+      
+            String usuario=B_nombre.getText();
+            String id= id_baja.getText();
+    int c= 0 ;
+     
     String SQL= "delete  from n_usuarios where nick='"+usuario+"'and id_usuario= '"+id+"'";
      try {
              PreparedStatement pst= con.prepareStatement(SQL);
              pst.executeUpdate();
              JOptionPane.showMessageDialog(null, "Borrado con exito");
+             PIN a= new PIN();
+             a.setVisible(true);
+             this.dispose();
+             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo borrar"+ e.getMessage());
        }
+        
+        
     
     }
     public Bajas_Usuarios() {
@@ -38,7 +48,23 @@ public class Bajas_Usuarios extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
    
-    
+     public int Validar(){
+         int a=0;
+            
+            if(!B_nombre.getText().isEmpty()){
+                if(!id_baja.getText().isEmpty()){
+                    a=1;
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "datos incompletos");
+                }
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "datos incompletos");
+            }
+         
+         
+         
+         return a;
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,6 +115,7 @@ public class Bajas_Usuarios extends javax.swing.JFrame {
         Guardar.setBorder(null);
         Guardar.setBorderPainted(false);
         Guardar.setContentAreaFilled(false);
+        Guardar.setEnabled(false);
         Guardar.setFocusPainted(false);
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +143,12 @@ public class Bajas_Usuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 40, 30));
+
+        id_baja.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                id_bajaKeyTyped(evt);
+            }
+        });
         getContentPane().add(id_baja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 120, 40));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -150,6 +183,10 @@ public class Bajas_Usuarios extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_GuardarActionPerformed
+
+    private void id_bajaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_id_bajaKeyTyped
+      Guardar.setEnabled(true);
+    }//GEN-LAST:event_id_bajaKeyTyped
 
     /**
      * @param args the command line arguments

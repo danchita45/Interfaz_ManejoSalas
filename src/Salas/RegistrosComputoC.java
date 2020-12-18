@@ -266,8 +266,9 @@ int e;
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
 
         dispose();
-        Inicio ni = new Inicio();
+        Salas_Computo ni = new Salas_Computo();
         ni.setVisible(true);
+        
     }//GEN-LAST:event_ExitActionPerformed
 
     private void Ayuda_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ayuda_bActionPerformed

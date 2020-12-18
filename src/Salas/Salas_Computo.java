@@ -133,24 +133,28 @@ public class Salas_Computo extends javax.swing.JFrame {
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
 
-        dispose();
+      
         Inicio inc = new Inicio();
         inc.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ExitActionPerformed
 
     private void Sala_a_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sala_a_bActionPerformed
          RegistrosComputoA Sa = new RegistrosComputoA();
        Sa.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Sala_a_bActionPerformed
 
     private void Sala_b_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sala_b_BActionPerformed
        RegistrosComputoB Sb = new RegistrosComputoB();
        Sb.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Sala_b_BActionPerformed
 
     private void Sala_c_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sala_c_BActionPerformed
         RegistrosComputoC Sc = new RegistrosComputoC();
        Sc.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_Sala_c_BActionPerformed
 
     private void Ayuda_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ayuda_bActionPerformed

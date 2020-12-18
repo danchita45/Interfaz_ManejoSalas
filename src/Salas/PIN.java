@@ -222,6 +222,7 @@ public class PIN extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null, "Error de acceso, verifique los datos"+e.getMessage());
        PIN inu= new PIN();
        inu.setVisible(true);
+       this.dispose();
         
              }
     
