@@ -6,7 +6,6 @@
 package Salas;
 
 import Programacion.Autoinc;
-import Programacion.Selector;
 import Programacion.Tiempo;
 import Programacion.conexionSQL;
 import java.sql.Connection;
@@ -25,7 +24,6 @@ int e;
   conexionSQL cc = new conexionSQL();
     Connection con = cc.conexion();
     Calendar hora = new GregorianCalendar();
-    Selector valor = new Selector();
    
     
     public RegistrosComputoA() {

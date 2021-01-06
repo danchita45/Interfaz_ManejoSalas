@@ -6,7 +6,6 @@
 package Salas;
 
 import Programacion.Autoinc;
-import Programacion.Selector;
 import Programacion.Tiempo;
 import Programacion.conexionSQL;
 import java.sql.Connection;
@@ -28,7 +27,7 @@ public class RegistroAudiovisual extends javax.swing.JFrame {
     conexionSQL cc = new conexionSQL();
     Connection con = cc.conexion();
     Calendar hora = new GregorianCalendar();
-    Selector valor = new Selector();
+   
 
     public RegistroAudiovisual() {
         initComponents();
