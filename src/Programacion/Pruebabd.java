@@ -20,15 +20,11 @@ import java.util.Calendar;
  * @author hp
  */
 public class Pruebabd {
-    public static void main(String[] args) {
-      
-        Pruebabd a= new Pruebabd();
-
-     a.EstadoAudiovisual();
+ 
         
 
         
-    }
+    
     public int EstadoAudiovisual() {
         conexionSQL cc = new conexionSQL();
     Connection con = cc.conexion();
