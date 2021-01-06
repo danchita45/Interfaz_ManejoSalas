@@ -142,6 +142,12 @@ public class RegistroAudiovisual extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel6.setText("Nombre del evento");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 120, 30));
+
+        ID_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ID_usuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(ID_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 160, 30));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -151,6 +157,11 @@ public class RegistroAudiovisual extends javax.swing.JFrame {
         Encargado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EncargadoActionPerformed(evt);
+            }
+        });
+        Encargado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EncargadoKeyTyped(evt);
             }
         });
         getContentPane().add(Encargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 130, 30));
@@ -286,9 +297,31 @@ public class RegistroAudiovisual extends javax.swing.JFrame {
     }//GEN-LAST:event_EncargadoActionPerformed
 
     private void ValidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidaActionPerformed
+        
         Validar();
 
     }//GEN-LAST:event_ValidaActionPerformed
+
+    private void ID_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ID_usuarioKeyTyped
+        char Validar = evt.getKeyChar();
+        if (Character.isLetter(Validar)) {
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros ");
+            ID_usuario.setText("");
+            ID_usuario.setText("");
+            
+        }
+        
+    }//GEN-LAST:event_ID_usuarioKeyTyped
+
+    private void EncargadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EncargadoKeyTyped
+        char Validar = evt.getKeyChar();
+        if (Character.isDigit(Validar)) {
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros ");
+            Encargado.setText("");
+            Encargado.setText("");
+            
+        }
+    }//GEN-LAST:event_EncargadoKeyTyped
 
     /**
      * @param args the command line arguments
